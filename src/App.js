@@ -1,25 +1,29 @@
 import React from 'react';
-import logo from './logo.svg';
+import "circular-std";
 import './App.css';
+import { Switch,BrowserRouter, Route } from 'react-router-dom'
+import routeDefinitions from './routes'
 
 function App() {
+  const routes = routeDefinitions.map(({
+    path, component,exact, key,name
+  }) => {
+    return (
+      <Route
+        exact={Boolean(exact)}
+        path={path}
+        component={component}
+        name={name}
+        key={key}
+      />
+    )
+  });
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <BrowserRouter> 
+    <Switch>
+      {routes}
+    </Switch>
+    </BrowserRouter>
   );
 }
 
