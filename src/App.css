@@ -1,4 +1,5 @@
 @import './scss/slides.css';
+@import './scss/form.css';
 .App {
   text-align: center;
 }
@@ -8,7 +9,9 @@
   height: 40vmin;
   pointer-events: none;
 }
-
+:root{
+  --primaryFont:CircularStd,sans-serif;
+}
 .App-header {
   background-color: #282c34;
   min-height: 100vh;
@@ -19,16 +22,47 @@
   font-size: calc(10px + 2vmin);
   color: white;
 }
+.toolbar{
+  width: 100%;
+  background:transparent;
+  color: rgba(243, 240, 240, 0.5) !important;
 
-.App-link {
-  color: #61dafb;
+}
+.appbar{
+  position: fixed !important;
+  height: 10%;
+  padding: 20px;
+  z-index: 4;
+  color: #fff !important;
+  display: flex;
+  z-index: 1300;
+  flex-direction: row;
+  justify-content: space-between;
+width: 100%;
+}
+.appbar:hover{
+  z-index: 4500000 !important;
+}
+.logo{
+  color:#fff;
+  font-size:27px !important;
+  font-weight: 500;
+  /* z-index:10; */
+  margin-left: 0 !important;
+  font-family:var(--primaryFont);
+  border-block: 2px solid #fff !important;
+  border-color: #fff;
+}
+.menu:hover{
+color: #fff !important;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+
+.logo, .menu{
+  z-index: 0.99;
 }
+.logo:hover{
+  color: #fff !important;
+}
+
+

@@ -7,7 +7,7 @@ import withStyles from '@material-ui/core/styles/withStyles'
 import { duration } from '@material-ui/core/styles/transitions'
 import Fab from '@material-ui/core/Fab'
 import ArrowBackIcon from '@material-ui/icons/ArrowBack'
-import ArrowForwardIcon from '@material-ui/icons/ArrowForward'
+import {ArrowForwardIcon,NavigateBefore,NavigateNext }from '@material-ui/icons'
 import Modal from '@material-ui/core/Modal'
 import Fade from '@material-ui/core/Fade'
 import Dots from 'material-ui-dots'
@@ -16,6 +16,7 @@ import Carousel from './SwipableCarouselView'
 import { modulo } from './util'
 import Media from 'react-media';
 import {Link} from 'react-router-dom';
+// import { BottomNavigation } from '@material-ui/core';
 const styles = {
   root: {
     '& > *:focus': {
@@ -54,19 +55,20 @@ const styles = {
   
   arrowLeft: {
     // left: -96
-    left: 96,
-    top:420,
-    background: 'linear-gradient(125.58deg, #BAFB67 -5.37%, #00D23A 196.64%)',
+    left: 90,
+    top:350,
+    // background: 'linear-gradient(125.58deg, #BAFB67 -5.37%, #00D23A 196.64%)',
   
   },
   arrowRight: {
     // right: -96
-    right: 96,
-    top:420,
-    background: 'linear-gradient(125.58deg, #BAFB67 -5.37%, #00D23A 196.64%)'
+    right: 90,
+    top:350,
+    // background: 'linear-gradient(125.58deg, #BAFB67 -5.37%, #00D23A 196.64%)'
   },
   arrowIcon: {
     color: '#fff',
+    fontSize: 40,
   },
   carouselWrapper: {
     overflow: 'hidden',
@@ -173,6 +175,7 @@ class AutoRotatingCarousel extends Component {
       hideArrows,
       interval,
       label,
+      title,
       landscape: landscapeProp,
       mobile,
       ModalProps,
@@ -240,16 +243,17 @@ class AutoRotatingCarousel extends Component {
                   [classes.footerMobileLandscape]: landscape
                 })}
               >
-                {label &&  <Link className="link" to="/mybooks">
+               
+                
+               
                 <Button
                   variant='contained'
-                  onClick={onStart}
+                  onClick={this.props.handleDrawer}
                   {...ButtonProps}
                 >
                   {label}
                 </Button>
-                </Link>
-                }
+               
                 {
                   hasMultipleChildren &&
                   <Dots
@@ -268,33 +272,36 @@ class AutoRotatingCarousel extends Component {
 
               {mobile && hasMultipleChildren &&(
                 <div>
-                  <Fab
+                  <div
+                   style={isMobile?{left:20}:{textAlign:"center"}}
                   className={classNames(classes.arrow, classes.arrowLeft)}
                   onClick={() => this.decreaseIndex()}
                 >
-                  <ArrowBackIcon className={classes.arrowIcon} />
-                </Fab>
-                <Fab className={classNames(classes.arrow, classes.arrowRight)}
+                  <NavigateBefore className={classes.arrowIcon} />
+                </div>
+                <div 
+                  style={isMobile?{right:15}:{textAlign:"center"}}
+                className={classNames(classes.arrow, classes.arrowRight)}
                   onClick={() => this.increaseIndex()}
                 >
-                  <ArrowForwardIcon className={classes.arrowIcon} />
-                </Fab>
+                  <NavigateNext className={classes.arrowIcon} />
+                </div>
                 </div>
               )}
             </div>
             {!mobile && !hideArrows && hasMultipleChildren && (
               <div>
                 <Fab
-                style={isMobile?{top:100}:{textAlign:"center"}}
+                style={isMobile?{top:100,left:-50}:{textAlign:"center"}}
                   className={classNames(classes.arrow, classes.arrowLeft)}
                   onClick={() => this.decreaseIndex()}
                 >
-                  <ArrowBackIcon className={classes.arrowIcon} />
+                  <NavigateBefore className={classes.arrowIcon} />
                 </Fab>
                 <Fab  style={isMobile?{top:100}:{textAlign:"center"}} className={classNames(classes.arrow, classes.arrowRight)}
                   onClick={() => this.increaseIndex()}
                 >
-                  <ArrowForwardIcon className={classes.arrowIcon} />
+                  <NavigateNext className={classes.arrowIcon} />
                 </Fab>
               </div>
             )}
