@@ -5,8 +5,8 @@ import Slide3 from './components/Slides/Slide3';
 import Slide2 from './components/Slides/Slide2';
 import Slide4 from './components/Slides/Slide4';
 import Slide5 from './components/Slides/Slide5';
-import { AppBar, Typography, Button, Toolbar, IconButton, Icon } from '@material-ui/core';
-import {MenuOutlined, Menu} from '@material-ui/icons'
+import {  Typography, Button } from '@material-ui/core';
+import { Menu} from '@material-ui/icons'
 import SwipeDrawer from './components/SwipeDrawer';
 import AuthForm from './components/AuthForm';
 import Media from 'react-media';
@@ -49,7 +49,7 @@ class Carousel extends Component {
                 <div style={{zIndex:50000}}>
                 <SwipeDrawer
                 position="right"
-                drawerStyles={customDrawerStyle}
+                drawerStyles={{...customDrawerStyle,backgroundColor:'transparent'}}
                 isOpen={this.state.drawerIsOpen}
                 toggleDrawer={this.handleToggleDrawer}
               >

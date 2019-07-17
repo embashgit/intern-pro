@@ -18,7 +18,8 @@ const styles = {
     backgroundColor: 'transparent'
   },
 drawerWidth:{
-  width: 350
+  width: 350,
+ 
 },
 
 };
@@ -34,16 +35,16 @@ class DisplayDrawer extends React.Component {
     return (
       <div>
         <SwipeableDrawer
-        
+        classes={{paper:classes.BackdropProps}}
           anchor={position}
           open={isOpen}
           onClose={toggleDrawer}
-          ModalProps={{
-            BackdropProps:{
+          style={{background:"transparent"}}
+          SwipeAreaProps={{
               classes:{
-                root:classes.BackdropProps
+                root:classes.BackdropProps,
               }
-            },
+            
           }}
           onOpen={toggleDrawer}
         >

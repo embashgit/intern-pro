@@ -6,8 +6,7 @@ import Paper from '@material-ui/core/Paper'
 import withStyles from '@material-ui/core/styles/withStyles'
 import { duration } from '@material-ui/core/styles/transitions'
 import Fab from '@material-ui/core/Fab'
-import ArrowBackIcon from '@material-ui/icons/ArrowBack'
-import {ArrowForwardIcon,NavigateBefore,NavigateNext }from '@material-ui/icons'
+import {NavigateBefore,NavigateNext }from '@material-ui/icons'
 import Modal from '@material-ui/core/Modal'
 import Fade from '@material-ui/core/Fade'
 import Dots from 'material-ui-dots'
@@ -15,7 +14,7 @@ import classNames from 'classnames'
 import Carousel from './SwipableCarouselView'
 import { modulo } from './util'
 import Media from 'react-media';
-import {Link} from 'react-router-dom';
+
 // import { BottomNavigation } from '@material-ui/core';
 const styles = {
   root: {
@@ -175,13 +174,11 @@ class AutoRotatingCarousel extends Component {
       hideArrows,
       interval,
       label,
-      title,
       landscape: landscapeProp,
       mobile,
       ModalProps,
       open,
       onClose,
-      onStart
     } = this.props
     const landscape = mobile && landscapeProp
     const transitionDuration = { enter: duration.enteringScreen, exit: duration.leavingScreen }

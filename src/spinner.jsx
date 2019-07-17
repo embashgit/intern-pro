@@ -7,8 +7,8 @@ class Spinner extends Component {
         <div className="spinner-container">
 <div className='loader'>
     <Loader
-    type="Puff"
-    color="#00BFFF"
+    type="RevolvingDot"
+    color="rgb(9, 65, 68)"
     height="50"
     width="50"
  />

@@ -3,7 +3,9 @@ import "circular-std";
 import './App.css';
 import { Switch,BrowserRouter, Route } from 'react-router-dom'
 import routeDefinitions from './routes'
+import { createBrowserHistory } from 'history';
 
+export const history = createBrowserHistory();
 function App() {
   const routes = routeDefinitions.map(({
     path, component,exact, key,name

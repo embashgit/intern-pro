@@ -4,11 +4,15 @@
   text-align: center;
 }
 
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 40vmin;
-  pointer-events: none;
+.spinner-container{
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  background: linear-gradient(147.21deg, #EEECFF -8.91%, #FFFFFF 99.17%);
+  min-height: 100vh;
 }
+
 :root{
   --primaryFont:CircularStd,sans-serif;
 }

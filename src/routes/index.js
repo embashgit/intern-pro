@@ -20,7 +20,7 @@ const Slide1 = Loadable ({
 
  const routes = [
     {path:'/', exact: true, key:"Slides", name:"Slides", component:Slides },
-    {path:'/slide1',key:"slideTest",  name:"slideTest", component:Slide1 },
+    {path:'/slide1', exact:true, key:"slideTest",  name:"slideTest", component:Slide1 },
 ]
 
 export default routes;

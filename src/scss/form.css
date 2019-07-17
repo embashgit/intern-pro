@@ -1,13 +1,19 @@
 .form-container{
     display: flex;
     width: 100%;
-    min-height: 100vh;
+    min-height: 70vh;
     text-align: center;
     justify-content: center !important;
+    background-color: 'transparent';
+    flex-direction: column;
 }
 
 .formWrapper{
     align-content: center;
+    margin-top: 20%;
+    padding:20px;
+    text-align:center;
+    width: 80%;
     /* transform: translate(-50%, -50%); */
 }
 
@@ -19,6 +25,7 @@ cursor:pointer;
 z-index:10000000 !important;
 }
 
+
 .iconButton{
 z-index: 10000;
 }
@@ -26,9 +33,241 @@ z-index: 10000;
     z-index: 10000000 !important;
     /* box-shadow:0 3px 10px 0 rgba(0,0,0,.08); */
 }
-.MuiPaper-root-126{
-    background-color: transparent;
+
+
+
+/* new Styles */
+
+
+:root{
+    --primaryFont:CircularStd,sans-serif;
+  }
+.formSection{
+    z-index: 10000;
+    margin: auto;
+    text-align: center;
+    border-radius: 5px;
+    height: 100%;
+    padding:10px;
+    width: 33%;
+    flex-direction: column;
+    justify-content: center;
+    /* box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23); */
+}
+
+
+#booklabel{
+    position: absolute;
+    top: 15px;
+    right:80px;
+    width: 100px;
+  }
+  #booklabel,#timelinelabel,#notlabel,#revewlabel{
+    display: none;
+  }
+  
+  #books:hover #booklabel{
+  display: block;
+  }
+  
+  #notifications:hover #notlabel{
+    display: block;
+  }
+  
+  #Timeline:hover #timelinelabel{
+    display: block;
+  }
+  #reviews:hover #revewlabel{
+    display: block;
+  }
+
+.formControl{
+    z-index:10000 ;
+    position: relative;
+    margin:10px 5px 10px 5px;
+    padding:10px;
+    /* box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23); */  
+}
+#info{
+    font-family:var(--primaryFont);
+font-size: 12px;
+margin-top: 10px;
+line-height: normal;
+text-align: center;
+font-weight: 300;
+letter-spacing: 2px;
+color: #feefef;
+}
+#info:hover{
+color: #fff;
+font-size: 13.5px;
+}
+label{
+    position: absolute;
+    left: 12px;
+    opacity: .5;
+    top:-12px;
+    font-size: 13px;
+    font-family: var(--primaryFont);
+}
+#inputLine{
+    position: absolute;
+    width: 100%;
+    height: 3px;
+    top: 49px;
+    z-index: 10000;
+    background:  linear-gradient(179.24deg, #BAFB67 -5.37%, #00D23A 196.64%); 
+    /* border-bottom-color:  linear-gradient(179.24deg, #BAFB67 -5.37%, #00D23A 196.64%);  */
+}
+.textField{
+    padding: 0.7em;
+    font-size: 15px;
+    border:none;
+    width: 100%;
+    align-self: auto;
+    outline: 0;
+    z-index: 5000;
+    border-radius: 3px;
+    border-bottom-width: 3px;
+    font-family: var(--primaryFont);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
+}
+#Skyball{
+    position: absolute;
+    top:-80%;
+    right: 0;
+    width: 220px;
+    /* z-index: 10; */
+    height:220px;
+    border-radius: 50%;
+    animation: skywave 10s linear infinite;
+    background: linear-gradient(315deg, rgba(255, 255, 255, 0.61) 3.5%, rgba(121, 171, 252, 0.61) 93.61%, rgba(96, 108, 255, 0.61) 147.83%);
+}
+.submit-btn{
+    width:97%;
+    padding:.5em;
+     margin-top:10px;
+     margin-left:15px !important;
+    }
+#skyball2{
+    position: absolute;
+    bottom:-40%  ;
+    right:30%;
+    width: 190px;
+    padding: 20px;
+    height: 190px;
+    border-radius: 50%;
+    z-index: 0.5;
+    background:linear-gradient(228.76deg, rgb(9, 65, 68) -34.42%, #E084F1 127.18%);
+    transform: rotate(-15.82deg);
+    animation: skywave  10s .5s linear infinite reverse;
+}
+#passwordIcon{
+    position:absolute;
+    top:18px;
+    right: -10px;
+}
+.bulbSection{
+    text-align: center;
+    margin: auto;
+    width: 70px;
+    height: 70px;
+    padding: 30px;
+    border-radius: 50%;
+    z-index: 10000;
+    background: linear-gradient(147.47deg, #FEB665 24.48%, #F66EB4 118.65%);
+}
+
+
+@keyframes skywave{
+    0%{
+        right: 2%;
+        top:-70%;
+        transform: scale(0.5);
+        opacity: 0.6;
+        z-index: .5;
+
+    }
+    30%{
+        right:10%;
+top:70%;
+        transform:scale(0.25);
+        opacity:0;
+        z-index: 0;
+    }
+    60%{
+        right:30%;
+        top:40%;
+        transform:scale(0.5);
+        opacity: .5;
+        z-index: 0;
+    }
+    80%{
+        right:30%;
+        top:20%;
+        transform:scale(0.4);
+        opacity: .2;
+        z-index: 0;  
+    }
+    100%{
+        right: 0%;
+        top:-40%;
+        z-index: 0;
+        opacity: 0;
+        transform: scale(1);
+
+    }
 }
 .formHeader{
+    /* display: flex */
+    width: 100%;
+    align-items: center !important;
+    text-align: center !important;
+}
+.formHeader p{
+    font-size: 25px;
+    margin-bottom:10%; 
+    text-transform: uppercase;
+    color: #fff;
+    font-family: var(--primaryFont);
+    text-align: center !important; 
+}
 
+@media (min-width: 320px) and (max-width: 480px) {
+
+    .form-container{
+        margin-left: 10%;
+    }
+    .formSection{
+        width: 220px;
+    }
+ 
+    #skyball2{
+        position: absolute;
+        top:45%  ;
+        right:10%;
+        width: 60px;
+        opacity: .15;
+        height: 60px;
+        border-radius: 50%;
+       
+    }
+    .textField{
+        font-size: 13px;
+        width: 70%;
+    }
+
+    .submit-btn{
+    width:70%;
+ margin-left: 0px !important;
+    }
+    #inputLine{
+        position: absolute;
+        width: 100%;
+        height: 3px;
+        top: 44px;
+        z-index: 10000;
+        background:  linear-gradient(179.24deg, #BAFB67 -5.37%, #00D23A 196.64%); 
+    }
+       
 }
