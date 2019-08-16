@@ -82,7 +82,7 @@ const account = [
     id: 1, email: "almustafaisah@yahoo.com", pin: "password",
     profile: {
       abbrv: 'I Networks',
-      name: 'Ibrahim Embash',
+      name: 'Musty Faisal',
     },
     access: [
       { "module": "Dashboard", "pages": ["dashboard","profile"] },
@@ -93,8 +93,8 @@ const account = [
   {
     id: 2, email: "ibrahimembash@gmail.com", pin: "password",
     profile: {
-      abbrv: 'Benue ST',
-      name: 'Procurement Officer',
+      abbrv: 'Abuja Soft',
+      name: 'Ibrahim Embash',
     },
     access: [
       { "module": "Dashboard", "pages": ["dashboard","profile"] },

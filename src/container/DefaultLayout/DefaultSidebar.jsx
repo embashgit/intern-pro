@@ -185,7 +185,7 @@ class DefaultSidebar extends React.Component {
               {sidebarFixed ? <NotesIcon color="inherit" /> : <MenuIcon color="inherit" />}
             </IconButton>
           </div>
-<div className={classes.authProfile}>
+{open && <div className={classes.authProfile}>
 <img height="150px" src={require('../../images/phoneProfile.png')} alt="profile-display"/>
 <div>
 
@@ -195,7 +195,7 @@ class DefaultSidebar extends React.Component {
     <Button  className={classes.picButton} variant="outlined" > Change Image</Button>
   </div>
 </div>
-</div>
+</div>}
 <List key="List">
             {menuList.map((item, index) => {
 
