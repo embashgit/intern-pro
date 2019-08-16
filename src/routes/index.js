@@ -4,11 +4,10 @@ import Loading from '../spinner';
 
 
    
-const Slides = Loadable ({
-    loader: () => import('../Carousel'),
+export const DefaultLayout = Loadable ({
+    loader: () => import('../container/DefaultLayout/DefaultLayout'),
     loading:() => <Loading/>,
-    delay: 3000, // 0.3 seconds
-    timeout:10000,
+ 
 });
 
 const Slide1 = Loadable ({
@@ -19,8 +18,8 @@ const Slide1 = Loadable ({
 
 
  const routes = [
-    {path:'/', exact: true, key:"Slides", name:"Slides", component:Slides },
-    {path:'/slide1', exact:true, key:"slideTest",  name:"slideTest", component:Slide1 },
+    // {path:'/', exact: true, key:"Slides", name:"Slides", component:Slides },
+    {path:'/slide1',  key:"slideTest",  name:"slideTest", component:Slide1 },
 ]
 
 export default routes;

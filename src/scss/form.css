@@ -132,6 +132,12 @@ label{
     font-family: var(--primaryFont);
     box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
 }
+        .submit-btn{
+            width:97%;
+            padding:.5em;
+             margin-top:10px;
+             margin-left:15px !important;
+            }
 #Skyball{
     position: absolute;
     top:-80%;
@@ -143,12 +149,6 @@ label{
     animation: skywave 10s linear infinite;
     background: linear-gradient(315deg, rgba(255, 255, 255, 0.61) 3.5%, rgba(121, 171, 252, 0.61) 93.61%, rgba(96, 108, 255, 0.61) 147.83%);
 }
-.submit-btn{
-    width:97%;
-    padding:.5em;
-     margin-top:10px;
-     margin-left:15px !important;
-    }
 #skyball2{
     position: absolute;
     bottom:-40%  ;
