@@ -56,14 +56,14 @@ handleSecondActionProps =() =>{
                    style={{paddingLeft:0,paddingRight:0}} 
                    onMouseEnter={(e) => e.target.style.color =Colors.blueSecondary} 
                   onMouseLeave={(e)=>e.target.style.color =Colors.grey}>{TopAction}
-                <Divider />
+                  <Divider />
                   </MenuItem>
                   }
-                <MenuItem  onClick={()=>this.handleSecondActionProps()} 
+                {BottomAction && <MenuItem  onClick={()=>this.handleSecondActionProps()} 
                 style={{color:Colors.danger,paddingLeft:0,paddingRight:0}}
                 //  onMouseEnter={(e) => e.target.style.color =Colors.blueSecondary} 
                   // onMouseLeave={(e)=>e.target.style.color =Colors.danger}
-                  >{BottomAction}</MenuItem>
+                  >{BottomAction}</MenuItem>}
                 </Menu>
                 
       </div>

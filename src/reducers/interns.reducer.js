@@ -21,6 +21,14 @@ import { SUCCESS_MESSAGES } from '../Constants/costants';
         {id:6,startdate:'21 March 2018',email:'louisa@gmail.com', enddate:'22 August 2018',gender:'Male',firstname:'Louisa',surname:'Jefer',jobtype:'Software'},
         {id:7,startdate:'21 January 2018',email:'bamidele@gmail.com', enddate:'22 August 2019',gender:'Male',firstname:'Bamidele',surname:'Akor',jobtype:'Media'},
       ],
+
+      taskList:[
+        {id:1,title:'E-portal', Author:'Musa Kalam',startdate:'21 April 2018',supervisor:'Mr Moo'},
+        {id:1,title:'Online Attendance', Author:'Lola Adeniyi',startdate:'1 April 2018',supervisor:'Mr Ajayi'},
+        {id:1,title:'E-commerce', Author:'Bello Umar',startdate:'2 July 2018',supervisor:'Embash Cardon'},
+        {id:1,title:'Payment Gateway', Author:'Kollore',startdate:'11 May 2018',supervisor:'Dauda kane'},
+        {id:1,title:'AirLine Booking System', Author:'Faisal Small',startdate:'20 August 2018',supervisor:'Mustapha Yaro'}
+      ],
     
       email:'',
       phone:'',

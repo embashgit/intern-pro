@@ -3,7 +3,7 @@ import React, { Component } from 'react'
 // import { updateBreadcrumb } from '../../actions/breadcrumbAction'
 import { connect } from 'react-redux';
 import { styles } from '../../styles/payment.styles';
-import { withStyles, Typography, Slide,Grow,Divider, createMuiTheme, MuiThemeProvider } from '@material-ui/core'; 
+import { withStyles, Typography, Slide,Grow, Divider, createMuiTheme, MuiThemeProvider } from '@material-ui/core'; 
 import MUIDataTable, { MUIDataTablePagination } from "mui-datatables";
 import Spinner from '../../components/Spinner';
 // import { styleProps } from '../Settings/Institution/Institution';
@@ -13,11 +13,14 @@ import { fetchRefreshRequest } from '../../actions/payment.action';
 import { styleProps } from '../../container/routes';
 import CallOut from '../../components/CallOut/CallOut';
 import Deactivate from './Deactivate';
-class TaxList extends Component {
+
+class InternList extends Component {
+
 state={
   rowsPerPage:5,
   isLoading:true,
 }
+
 handleCloseServerError=()=>{
   return this.props.fetchRefresh();
 }
@@ -58,14 +61,14 @@ getMuiTheme = () => createMuiTheme({
         }
     }) : [];
     const columns = [
-      {
-          name: "id",
-          label: "#",
-          options: {
-              sort: true,
-              filter:true,
-          }
-      },
+    //   {
+    //       name: "id",
+    //       label: "#",
+    //       options: {
+    //           sort: true,
+    //           filter:true,
+    //       }
+    //   },
 
       {
           name: "firstname",
@@ -89,16 +92,6 @@ getMuiTheme = () => createMuiTheme({
       }
     },
      
-      
-      {
-        name: "gender",
-        label: "Gender",
-        options: {
-          sort: true,
-      },
-      
-
-    },
     {
         name: "startdate",
         label: "Start Date",
@@ -169,9 +162,8 @@ const mapStateToProps = (state) => {
 }
 const mapDispatchToProps = (dispatch) => {
   return {
-    // getPaymentHistory :()=>dispatch(getAllPaymentHistory()),
-    // fetchRefresh:()=>dispatch(fetchRefreshRequest()),
+    
   }
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(withStyles(styles)(TaxList))
+export default connect(mapStateToProps, mapDispatchToProps)(withStyles(styles)(InternList))

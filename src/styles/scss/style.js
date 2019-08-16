@@ -38,12 +38,22 @@ export const styles = theme => ({
       padding:5,
       paddingLeft:10,
       borderRadius:5,
+
       '&:hover':{
           backgroundColor:Colors.grey,
           color:Colors.light
       }
 
      },
+     listroot: {
+      width: '100%',
+      maxWidth: 390,
+      boxShadow: '0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23)',
+      maxHeight: 500,
+      marginLeft:20,
+      padding:10,
+      backgroundColor: theme.palette.background.paper,
+    },
      resize:{
       fontSize: 14,
       margin: theme.spacing.unit/2,
