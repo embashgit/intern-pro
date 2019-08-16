@@ -31,7 +31,8 @@ getMuiTheme = () => createMuiTheme({
     overrides: {
       MUIDataTableBodyCell: {
         root: {
-          backgroundColor: "transparent"
+          backgroundColor: "transparent",
+          boxShadow:'none'
         },
         paper:{
             boxShadow: 'none',
@@ -48,6 +49,7 @@ getMuiTheme = () => createMuiTheme({
             ...row,
             action: <CallOut 
             BottomAction={<Deactivate staff={row} />}
+            // TopAction ={'Edit'}
             // TopAction={<UpdateSemester Icon={<Edit style={{marginLeft:8}}/>}
             // triggerText="Edit" 
             // style={{width:150,color:Colors.blueSecondary,justifyContent:'space-around'}}

@@ -55,13 +55,13 @@ closeModal = ()=>{
 
 handleOnDelete=()=>{
 const {id} = this.props.staff;
-this.props.getDelete(id)
+// this.props.getDelete(id)
 }
 render() {
     const {classes,staff,}= this.props;
     const {isMobile}= this.state;
     const {paper,mobileWidth,width,} = classes;
-    const triggerText = <span style={{color:red['500']}}>Delete</span>;
+    const triggerText = <span style={{color:red['500']}}>Deactivate</span>;
     const Icon =<PersonAddDisabledOutlined style={{color:Colors.danger}}/>
     const form =(
         <div>
