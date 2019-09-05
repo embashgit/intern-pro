@@ -33,7 +33,7 @@ export const handleSidebarNavItems = (sidebarObj) => {
     const { access  } = sidebarObj;
     const sideNavItems = [];
     if(access){
-        for(var i=0; i<access.length; i++){
+        for(var i=0; i<access.length; i++){ 
          const child =access[i]['pages'].map(page=>{
              return{
                  name:capitalize(page),

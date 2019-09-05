@@ -110,9 +110,7 @@ class DefaultSidebar extends React.Component {
 
 
     const menuList = [
-
       ...handleSidebarNavItems(this.props.userData),
-
     ];
 
    

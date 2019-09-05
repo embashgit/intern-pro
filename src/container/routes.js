@@ -26,9 +26,39 @@ export const Dashboard = Loadable ({
     loader: () => import('../Views/Dashboard/Dashboard'),
     loading:() => <Loading/>,
 });
+
+export const AdminLogin = Loadable ({
+    loader: () => import('../Views/Dashboard/Administrature/Administrateur'),
+    loading:() => <Loading/>,
+});
+
+export const Interns = Loadable ({
+    loader: () => import('../Views/Staff/Interns/Intenrs'),
+    loading:() => <Loading/>,
+});
+
+export const Supervisors = Loadable ({
+    loader: () => import('../Views/Staff/Supervisors/Supervisor'),
+    loading:() => <Loading/>,
+});
+export const InternDashboard = Loadable ({
+    loader: () => import('../Views/InternDashboard/InternDashboard'),
+    loading:() => <Loading/>,
+});
+export const Tasks = Loadable ({
+    loader: () => import('../Views/SupervisorDashborad/Tasks'),
+    loading:() => <Loading/>,
+});
+
 const routes = [
     {path:'/', exact:true, key:'home', name:"home", component:Dashboard},
     {path:'/dashboard',key:'Dashboard', name:"Dashboard", component:Dashboard},
+    {path:'/administrateur',key:'Administrateur', name:"Administrateur", component:AdminLogin},
+    {path:'/Interns',key:'Interns', name:"Interns", component:Interns},
+    // {path:'/supervisors',key:'Supervisors', name:"Supervisors", component:Supervisors},
+
+    {path:'/internDashboard',key:'InternDashboard', name:"InternDashboard", component:InternDashboard},
+    {path:'/Tasks', key:'Tasks', name:"Tasks", component:Tasks},
     // {path:'/slide',key:'Slide1', name:"Slide1", component:Slide1},
 ];
 

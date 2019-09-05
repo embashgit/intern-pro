@@ -85,9 +85,8 @@ const account = [
       name: 'Musty Faisal',
     },
     access: [
-      { "module": "Dashboard", "pages": ["dashboard","profile"] },
-      { "module": "Interns", "pages": ["Intern","Report"] },
-      { "module": "Report", "pages": ["report"] }
+      { "module": "Dashboard", "pages": ["InternDashboard"]},
+      { "module": "Staffs", "pages": ["Interns"] },
     ]
   },
   {
@@ -97,11 +96,22 @@ const account = [
       name: 'Ibrahim Embash',
     },
     access: [
-      { "module": "Dashboard", "pages": ["dashboard","profile"] },
-      { "module": "Interns", "pages": ["interns" ,"business"] },
-      { "module": "Report", "pages": ["report"] }
+      { "module": "Dashboard", "pages": ["dashboard","Administrateur"] },
+      { "module": "Interns", "pages": ["Interns"] },
+      { "module": "Supervisor", "pages": ["supervisor"] }
     ]
-  }
+  },
+  {
+    id: 3, email: "ahmadhussein@gmail.com", pin: "password",
+    profile: {
+      abbrv: 'G Desinger',
+      name: 'Ahmad Hussein',
+    },
+    access: [
+      { "module": "Dashboard", "pages": ["Tasks"]},
+      { "module": "Interns", "pages": ["Interns"] },
+    ]
+  },
 ]
 const AuthState = (state = InitState, action) => {
 

@@ -1,5 +1,4 @@
 import React, { Component } from 'react'
-
 // import { updateBreadcrumb } from '../../actions/breadcrumbAction'
 import { connect } from 'react-redux';
 import { styles } from '../../styles/payment.styles';

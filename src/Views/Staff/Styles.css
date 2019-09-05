@@ -1,0 +1,28 @@
+.DialogBody{
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    flex-direction: column;
+}
+.textFields {
+    width: 110%;
+  }
+.dialogs{
+    align-items: left;
+    justify-content: left;
+    display: flex;
+    flex-direction: row;
+}
+.buttons{
+    margin-left: 10px;
+    margin-bottom:15px;
+    max-width:195; 
+    background:#325774; 
+    color: white ;
+}
+.removes{
+    font-family: Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    margin: 20px;
+    font-size: 24px;
+    color: red;
+}

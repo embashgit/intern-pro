@@ -1,0 +1,33 @@
+.paperTitle{
+    text-align: center;
+    font-weight: 400;
+    font-family: Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    padding-top: 15px;
+    background: #325774;
+    color: white;
+    font-size: 42;
+    font-weight: 600;
+    line-height: 40px;
+}
+.supervisorTitle{
+    text-align: center;
+    font-weight: 400;
+    font-family: Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    padding-top: 15px;
+    background:  #325774;
+    color: white;
+    font-size: 24;
+    line-height: 40px;
+}
+.hrLine{
+    width: 100%;
+    margin-top: 7px;
+}
+.lists:hover{
+    background: rgb(239, 244, 245);
+}
+.center_element{
+    align-items: center;
+    justify-content: center;
+    display: flex;
+}
