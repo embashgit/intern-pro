@@ -6,7 +6,8 @@ import ListItem from '@material-ui/core/ListItem';
 import ListItemText from '@material-ui/core/ListItemText';
 import Calendar from 'react-calendar';
 import '.././Styles.css'
-import axios from 'axios'
+import Axios from 'axios';
+
 
 export default class InternDashboard extends Component {
     constructor(props){
@@ -25,7 +26,7 @@ export default class InternDashboard extends Component {
     }
 
     componentDidMount = () =>{
-        axios.get('https://jsonplaceholder.typicode.com/todos')
+        Axios.get('https://jsonplaceholder.typicode.com/todos')
         .then(res => {
             const taskList = res.data.slice(0, 3);
             this.setState({
