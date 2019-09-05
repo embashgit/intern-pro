@@ -1,7 +1,8 @@
 import { Colors, Fonts } from "./themes";
 import { blue } from "../mui";
 
-export const styles = theme=>({
+export const 
+styles = theme=>({
     headerCards:{
         display:'flex',
         justifyContent:'space-between',
@@ -40,6 +41,8 @@ export const styles = theme=>({
         margin:'auto',
         
     },
+
+    
     payBtn:{
     backgroundColor:Colors.blueSecondary,
     font:`400 17px ${Fonts.primary}`,

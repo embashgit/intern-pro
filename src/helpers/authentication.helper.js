@@ -76,7 +76,10 @@ export const userLogin = (credentials) => {
     setTimeout(()=>{
       if (credentials) {
         dispatch(fetchLogin(credentials));
-        const { isLoggedIn} = getState().AuthState;
+        const { isLoggedIn,data} = getState().AuthState;
+        if(isLoggedIn && data.profile.title==='Intern'){
+          return history.push('/internDashboard')
+        }
         if(isLoggedIn){
           return history.push('/')
         } 

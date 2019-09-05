@@ -55,10 +55,10 @@ const routes = [
     {path:'/dashboard',key:'Dashboard', name:"Dashboard", component:Dashboard},
     {path:'/administrateur',key:'Administrateur', name:"Administrateur", component:AdminLogin},
     {path:'/Interns',key:'Interns', name:"Interns", component:Interns},
-    // {path:'/supervisors',key:'Supervisors', name:"Supervisors", component:Supervisors},
+    {path:'/supervisor',key:'Supervisors', name:"Supervisors", component:Supervisors},
 
     {path:'/internDashboard',key:'InternDashboard', name:"InternDashboard", component:InternDashboard},
-    {path:'/Tasks', key:'Tasks', name:"Tasks", component:Tasks},
+    {path:'/tasks', key:'Tasks', name:"Tasks", component:Tasks},
     // {path:'/slide',key:'Slide1', name:"Slide1", component:Slide1},
 ];
 

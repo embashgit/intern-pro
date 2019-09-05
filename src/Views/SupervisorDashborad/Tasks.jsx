@@ -1,86 +1,218 @@
-import React from 'react';
-import { withStyles, makeStyles } from '@material-ui/core/styles';
-import Table from '@material-ui/core/Table';
-import TableBody from '@material-ui/core/TableBody';
-import TableCell from '@material-ui/core/TableCell';
-import TableHead from '@material-ui/core/TableHead';
-import TableRow from '@material-ui/core/TableRow';
-import Paper from '@material-ui/core/Paper';
-import Charts from '../../Views/Dashboard/Charts'
 
-const StyledTableCell = withStyles(theme => ({
-  head: {
-    backgroundColor:  "#325774",
-    color: theme.palette.common.white,
-  },
-  body: {
-    fontSize: 14,
-  },
-}))(TableCell);
 
-const StyledTableRow = withStyles(theme => ({
-  root: {
-    '&:nth-of-type(odd)': {
-      backgroundColor: theme.palette.background.default,
+import React, { Component } from 'react'
+// import { updateBreadcrumb } from '../../actions/breadcrumbAction'
+import { connect } from 'react-redux';
+import { styles } from '../../styles/payment.styles';
+import { withStyles, Slide, createMuiTheme, MuiThemeProvider, Typography, Divider, Card } from '@material-ui/core'; 
+import MUIDataTable from "mui-datatables";
+import Spinner from '../../components/Spinner';
+import { styleProps } from '../../container/routes';
+import Checkbox from '@material-ui/core/Checkbox';
+import Grid from '@material-ui/core/Grid';
+import '../Styles.css'
+import { WorkOutlineOutlined } from '@material-ui/icons';
+import { Colors } from '../../styles/themes';
+
+
+class Tasks extends Component {
+
+state={
+  rowsPerPage:5,
+  isLoading:true,
+  tasks: [],
+}
+
+//Updates Tasks
+handleChange = (event) => {
+  let tasks = this.state.tasks
+  tasks.forEach(tasks => {
+    if (tasks.value === event.target.value)
+      tasks.isChecked =  event.target.checked
+    })
+  this.setState({tasks: tasks})
+}
+
+handleCloseServerError=()=>{
+  return this.props.fetchRefresh();
+}
+componentDidMount(){
+    setTimeout(()=>{
+this.setState({isLoading:false})
+    },1000)
+
+}
+getMuiTheme = () => createMuiTheme({
+    overrides: {
+      MUIDataTableBodyCell: {
+        root: {
+          backgroundColor: "transparent",
+          boxShadow:'none'
+        },
+        paper:{
+            boxShadow: 'none',
+        }
+      }
+    }
+  })
+  render() {
+    console.log(this.props.tasksList);
+      const {isLoading}=this.state;
+      const data = this.props.tasksList && this.props.tasksList.constructor === Array ? this.props.tasksList.map((row, i) => {
+        return {
+          
+            ...row,
+            action: 
+            
+            //Updates
+            <Checkbox
+            // checked={this.state.checkedB}
+            // onChange={this.handleChange('checkedB')}
+            handleChange={this.handleChange} {...this.state.tasks}
+            id="selected"
+            value="checkedB"
+            color="default"
+            inputProps={{
+              'aria-label': 'secondary checkbox',
+            }}
+          
+            // TopAction ={'Edit'}
+            // TopAction={<UpdateSemester Icon={<Edit style={{marginLeft:8}}/>}
+            // triggerText="Edit" 
+            // style={{width:150,color:Colors.blueSecondary,justifyContent:'space-around'}}
+            // semester={row} />}
+            />
+        }
+    }) : [];
+    const columns = [
+    //   {
+    //       name: "id",
+    //       label: "#",
+    //       options: {
+    //           sort: true,
+    //           filter:true,
+    //       }
+    //   },
+
+      {
+          name: "id",
+          label: "#",
+          options: {
+            sort: true,
+        }
+      },
+      {
+          name: "title",
+          label: "Title",
+          options: {
+            sort: true,
+        }
+      },
+      {
+        name: "Author",
+        label: "Author",
+        options: {
+          sort: true,
+      }
     },
-  },
-}))(TableRow);
+     
+    {
+        name: "startdate",
+        label: "Start Date",
+        options: {
+          sort: true,
+      }
+    },
+    {
+        name: "supervisor",
+        label: "supervisor",
+        options: {
+          sort: true,
+      }
+    },
+    {
+        name: "action",
+        label: "Actions",
+    },
 
-function createData(name, calories, fat, carbs, protein) {
-  return { name, calories, fat, carbs, protein };
+  ];
+  const options = {
+      filterType: 'checkbox',
+      pagination: true,
+      rowsPerPage: this.state.rowsPerPage,
+      // serverSide: true,
+      search: true,
+      selectableRows: 'none',
+      rowsPerPageOptions: [5,10, 20, 50, 100],
+      }
+
+  const renderDataTable = (
+    <Slide direction="left" in={!isLoading}>
+      <div>
+      <MuiThemeProvider theme={this.getMuiTheme()}>
+        <MUIDataTable
+         title="Task List"
+         data={data}
+         columns={columns}
+         options={options}
+         />
+         </MuiThemeProvider>
+      </div>
+    </Slide>
+  )
+    return (
+      <div >
+      <Grid container spacing={1}>
+     <Grid item xs={12} >
+       <Typography variant="subtitle1">Recent task Project</Typography>
+     <div className="headerCards" >
+                    <Card className="cards">
+                        <WorkOutlineOutlined />
+                        <p>VMS</p>
+                       11th Aug 2019
+                        </Card>
+
+
+                    <Card style={{ background: Colors.base, color: Colors.light }} className="cards current">
+                        <WorkOutlineOutlined />
+                        <p>
+                          E- Task Manager
+                           </p>
+                        10 Dec 2018
+                       </Card>
+
+
+                    <Card className="cards">
+                        <WorkOutlineOutlined />
+                        <p>
+                            Sorting Algo
+                           </p>
+                        22nd Sept 2019
+                           </Card>
+
+
+                </div>
+     </Grid>
+   
+     <Grid item xs={12}>
+        {isLoading? <Spinner {...styleProps}/>:renderDataTable}
+    
+        </Grid>
+        </Grid>
+      </div>
+    )
+  }
 }
 
-const rows = [
-  createData('Frozen yoghurt', 159, 6.0, 24, 4.0),
-  createData('Ice cream sandwich', 237, 9.0, 37, 4.3),
-  createData('Eclair', 262, 16.0, 24, 6.0),
-  createData('Cupcake', 305, 3.7, 67, 4.3),
-  createData('Gingerbread', 356, 16.0, 49, 3.9),
-];
-
-const useStyles = makeStyles(theme => ({
-  root: {
-    width: '100%',
-    marginTop: theme.spacing(3),
-    overflowX: 'auto',
-  },
-  table: {
-    minWidth: 700,
-  },
-}));
-
-export default function CustomizedTables() {
-  const classes = useStyles();
-
-  return (
-    <div>
-    <Charts/>
-    <Paper className={classes.root}>
-      <Table className={classes.table}>
-        <TableHead>
-          <TableRow>
-            <StyledTableCell>Dessert (100g serving)</StyledTableCell>
-            <StyledTableCell align="right">Calories</StyledTableCell>
-            <StyledTableCell align="right">Fat&nbsp;(g)</StyledTableCell>
-            <StyledTableCell align="right">Carbs&nbsp;(g)</StyledTableCell>
-            <StyledTableCell align="right">Protein&nbsp;(g)</StyledTableCell>
-          </TableRow>
-        </TableHead>
-        <TableBody>
-          {rows.map(row => (
-            <StyledTableRow key={row.name}>
-              <StyledTableCell component="th" scope="row">
-                {row.name}
-              </StyledTableCell>
-              <StyledTableCell align="right">{row.calories}</StyledTableCell>
-              <StyledTableCell align="right">{row.fat}</StyledTableCell>
-              <StyledTableCell align="right">{row.carbs}</StyledTableCell>
-              <StyledTableCell align="right">{row.protein}</StyledTableCell>
-            </StyledTableRow>
-          ))}
-        </TableBody>
-      </Table>
-    </Paper>
-    </div>
-  );
+const mapStateToProps = (state) => {
+  return {
+    tasksList:state.interns.taskList
+  }
 }
+const mapDispatchToProps = (dispatch) => {
+  return {
+    
+  }
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(withStyles(styles)(Tasks))

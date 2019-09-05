@@ -70,4 +70,39 @@ color: #fff !important;
   color: #fff !important;
 }
 
-
+.headerCards{
+  width:100%;
+  display:flex;
+  justify-content:space-around;
+  align-items:flex-start;
+  flex-direction:row;
+  color:#325774;
+}
+.itemcontainer{
+  position: relative;
+  width: 25%;
+  }
+.cards{
+  width: 25%;
+  height: 150px;
+  display:flex;
+  /* padding: theme.spacing.unit, */
+  font-family:var(--primaryFont);
+  color:var(--primaryColor);
+  align-items:center;
+  justify-content:center;
+  flex-direction: column;
+  text-transform: uppercase;
+  border-bottom:3px solid var(--primaryColor);
+    text-align: 'center';
+    cursor: pointer;
+    letter-spacing: 2px;
+}
+.current{
+  border-bottom:3px solid #f1fcf1; 
+}
+title{
+  color:var(--primaryColor);
+  letter-spacing:1;
+  padding:20px;
+}

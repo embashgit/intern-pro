@@ -22,12 +22,22 @@ import { SUCCESS_MESSAGES } from '../Constants/costants';
         {id:7,startdate:'21 January 2018',email:'bamidele@gmail.com', enddate:'22 August 2019',gender:'Male',firstname:'Bamidele',surname:'Akor',jobtype:'Media'},
       ],
 
+      supervisor:[
+        {id:1,email:'musakalam@applicationCache.com', startdate:'22 August 2011',gender:'Male',firstname:'Musa',surname:'Kalaam',jobtype:'Software'},
+        {id:2,email:'alafin02@app.com', startdate:'22 August 2012',gender:'Female',firstname:'Alafin',surname:'Obanla',jobtype:'Software'},
+        {id:3,email:'alikalam@gmail.com', startdate:'22 September 2008',gender:'Male',firstname:'Ali',surname:'Kalaam',jobtype:'Software'},
+        {id:4,email:'embash@cardon.com', startdate:'22 August 2014',gender:'Female',firstname:'Embash',surname:'Cardon',jobtype:'Software'},
+        {id:5,email:'lola@gmail.com', startdate:'22 December 2010',gender:'Female',firstname:'Lola',surname:'Kemi',jobtype:'Administration'},
+        {id:6,email:'louisa@gmail.com', startdate:'22 August 2013',gender:'Male',firstname:'Louisa',surname:'Jefer',jobtype:'Software'},
+        {id:7,email:'bamidele@gmail.com', startdate:'22 August 2016',gender:'Male',firstname:'Bamidele',surname:'Akor',jobtype:'Media'},
+      ],
+
       taskList:[
-        {id:1,title:'E-portal', Author:'Musa Kalam',startdate:'21 April 2018',supervisor:'Mr Moo'},
-        {id:1,title:'Online Attendance', Author:'Lola Adeniyi',startdate:'1 April 2018',supervisor:'Mr Ajayi'},
-        {id:1,title:'E-commerce', Author:'Bello Umar',startdate:'2 July 2018',supervisor:'Embash Cardon'},
-        {id:1,title:'Payment Gateway', Author:'Kollore',startdate:'11 May 2018',supervisor:'Dauda kane'},
-        {id:1,title:'AirLine Booking System', Author:'Faisal Small',startdate:'20 August 2018',supervisor:'Mustapha Yaro'}
+        {id:1,title:'Add Document to git', Author:'Musa Kalam',startdate:'21 April 2018',supervisor:'Mr Moo'},
+        {id:2,title:'Add Validation to forms', Author:'Lola Adeniyi',startdate:'1 April 2018',supervisor:'Mr Ajayi'},
+        {id:3,title:'Review Code',Author:'Bello Umar',startdate:'2 July 2018',supervisor:'Embash Cardon'},
+        {id:4,title:'Payment Gateway', Author:'Kollore',startdate:'11 May 2018',supervisor:'Dauda kane'},
+        {id:5,title:'AirLine Booking System', Author:'Faisal Small',startdate:'20 August 2018',supervisor:'Mustapha Yaro'}
       ],
     
       email:'',

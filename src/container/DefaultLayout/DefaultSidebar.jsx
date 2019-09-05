@@ -99,7 +99,7 @@ class DefaultSidebar extends React.Component {
   }
 
   render() {
-    const { classes, open, location, userData, isLoading, } = this.props;
+    const { classes, open, location, userData, isLoading,profileData } = this.props;
     const { isMobile, sidebarFixed, openNest, anchorEl,  } = this.state
     //  const handleFontSize = (arg)=>{
     //    const showdiv = document.getElementById('buizName').innerHTML;
@@ -187,8 +187,8 @@ class DefaultSidebar extends React.Component {
 <img height="150px" src={require('../../images/phoneProfile.png')} alt="profile-display"/>
 <div>
 
-  <Typography color="textSecondary" variant="subtitle2">Name: <span>Mustapha Abu</span></Typography>
-  <Typography color="textSecondary" variant="subtitle2">Title: <span>Human Relation Officer</span></Typography>
+  <Typography color="textSecondary" variant="subtitle2">Name: <span>{profileData.name}</span></Typography>
+  <Typography color="textSecondary" variant="subtitle2">Title: <span>{profileData.title}</span></Typography>
   <div className={classes.pic}>
     <Button  className={classes.picButton} variant="outlined" > Change Image</Button>
   </div>
@@ -256,6 +256,7 @@ class DefaultSidebar extends React.Component {
 const mapStateToProps = (state) => {
   return {
     userData: state.AuthState.data,
+    profileData:state.AuthState.data.profile,
     isLoading: state.AuthState.isLoadingData,
     dataError: state.AuthState.dataError,
     dataErrorMessage: state.AuthState.dataErrorMessage,

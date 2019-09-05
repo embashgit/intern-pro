@@ -6,10 +6,11 @@ import ListItem from '@material-ui/core/ListItem';
 import ListItemText from '@material-ui/core/ListItemText';
 import Calendar from 'react-calendar';
 import '.././Styles.css'
+import {connect} from 'react-redux';
 import Axios from 'axios';
 
 
-export default class InternDashboard extends Component {
+ class InternDashboard extends Component {
     constructor(props){
         super(props);
         this.state={
@@ -44,7 +45,7 @@ export default class InternDashboard extends Component {
     <Grid item xl={6} sm={12} lg={6} >
     <Paper>
     <Typography className="paperTitle">
-    TASK LIST
+    Tasks Assign to you
     </Typography>
     <Divider className="hrLine"/>
         <Typography 
@@ -56,18 +57,22 @@ export default class InternDashboard extends Component {
         </Typography>
 
     <List>
-    {this.state.taskList.map(item => (
-    <ListItem className="lists" key = {item.id}>
-        <ListItemText 
-        onChange={this.handleChange}
-         primary={item.title} 
-         secondary="Jan 1, 2019" />
-        <Typography
-        onChange={this.handleChange}
-        >{item.userId}
-        </Typography>
-    </ListItem>
-    ))}
+    {this.props.tasksList && this.props.tasksList.length?this.props.tasksList.map((item,i) => {
+    if(i<this.props.tasksList.length - 2){
+return(
+            <ListItem className="lists" key = {item.id}>
+                <ListItemText 
+                onChange={this.handleChange}
+                 primary={item.title} 
+                 secondary={item.startdate} />
+                <Typography
+                onChange={this.handleChange}
+                >{item.userId}
+                </Typography>
+            </ListItem>
+)
+    }}):<p>Fetching....</p>
+        }
     </List>
 
     </Paper>
@@ -92,3 +97,10 @@ export default class InternDashboard extends Component {
     )
     }
 }
+
+const mapStateToProps = (state) => {
+    return {
+        tasksList:state.interns.taskList
+    }
+  }
+export default connect(mapStateToProps)(InternDashboard)

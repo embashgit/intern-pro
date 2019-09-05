@@ -79,37 +79,42 @@ const {
 
 const account = [
   {
+    // admin
     id: 1, email: "almustafaisah@yahoo.com", pin: "password",
     profile: {
-      abbrv: 'I Networks',
+      abbrv: 'Admin',
       name: 'Musty Faisal',
+      title:'Human Resources Manager'
     },
     access: [
-      { "module": "Dashboard", "pages": ["InternDashboard"]},
-      { "module": "Staffs", "pages": ["Interns"] },
+      { "module": "Dashboard", "pages": [] },
+      { "module": "Staff", "pages": ["Interns","Supervisor"] },
     ]
   },
   {
     id: 2, email: "ibrahimembash@gmail.com", pin: "password",
     profile: {
-      abbrv: 'Abuja Soft',
+      abbrv: 'Admin',
       name: 'Ibrahim Embash',
+      title:'Supervisor'
     },
     access: [
-      { "module": "Dashboard", "pages": ["dashboard","Administrateur"] },
-      { "module": "Interns", "pages": ["Interns"] },
-      { "module": "Supervisor", "pages": ["supervisor"] }
+      { "module": "Dashboard", "pages": [] },
+      { "module": "Staff", "pages": ["Interns","Supervisor","Task"] },
+      // { "module": "Supervisor", "pages": ["supervisor"] }
     ]
   },
   {
     id: 3, email: "ahmadhussein@gmail.com", pin: "password",
     profile: {
-      abbrv: 'G Desinger',
+      abbrv: 'Intern',
       name: 'Ahmad Hussein',
+      title:'Intern'
     },
     access: [
-      { "module": "Dashboard", "pages": ["Tasks"]},
-      { "module": "Interns", "pages": ["Interns"] },
+      { "module": "Dashboard", "pages": ["InternDashboard"]},
+      { "module": "Tasks", "pages": []},
+      // { "module": "Interns", "pages": ["Interns"] },
     ]
   },
 ]
