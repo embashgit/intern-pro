@@ -36,7 +36,7 @@ class Deactivate extends Component {
 }
 
 getModalStyle=()=> {
-    const {top,left,shifModal}=this.state;
+    const {top,left}=this.state;
     return {
       top: `${top}%`,
       left: `${left}%`,
@@ -54,8 +54,7 @@ closeModal = ()=>{
 }
 
 handleOnDelete=()=>{
-const {id} = this.props.staff;
-// this.props.getDelete(id)
+this.props.handleDeactivate();
 }
 render() {
     const {classes,staff,}= this.props;
@@ -74,7 +73,7 @@ render() {
             </Button>
             </div>
             <RestoreOutlined style={{color:Colors.danger,fontSize:45}} />
-            <Typography variant="subheading"><span > </span> Are You Sure you want to Deactivate <span style={{color:Colors.blueSecondary}}>{`${staff['firstname']}`}</span> ?</Typography>
+            <Typography variant="subheading"><span > </span> Are You Sure you want to Deactivate <span style={{color:Colors.blueSecondary}}>{`${staff.data? staff.data['firstname']:staff['firstname']}`}</span> ?</Typography>
             <Button
     //   disabled={departmentData['formLoading']}
        style={{marginTop:10,color:Colors.danger}}

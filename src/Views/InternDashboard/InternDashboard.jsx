@@ -8,6 +8,7 @@ import Calendar from 'react-calendar';
 import '.././Styles.css'
 import {connect} from 'react-redux';
 import Axios from 'axios';
+import { API } from '../../Constants/costants';
 
 
  class InternDashboard extends Component {
@@ -27,14 +28,21 @@ import Axios from 'axios';
     }
 
     componentDidMount = () =>{
-        Axios.get('https://jsonplaceholder.typicode.com/todos')
-        .then(res => {
-            const taskList = res.data.slice(0, 3);
-            this.setState({
-                taskList
-            });
-        })
-    }
+      
+ return fetch(API.URL+API.PATHS.STAFF,{
+    method:'GET',
+    headers:{
+        'Content-Type':'application/json',
+      }
+  }).then(response=>{
+      return response.json()
+  })
+  .then(responseData=>{
+  console.log(responseData)
+  return responseData;
+  })
+}
+    
 
     render() {
     return (

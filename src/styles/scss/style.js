@@ -226,13 +226,18 @@ export const styles = theme => ({
          marginLeft: 20
       },
       addButton:{
-        margin:'10px 4px 0 7px',
-        padding:'0.2em',
-        borderColor:Colors.blueSecondary,
+       
+        padding:'0.8em',
+        borderColor:Colors.base,
         borderRadius:3,
+        width:'20%',
         paddingTop:5,
+        alignItems:'center',
+        alignSelf:'center',
+        margin:'auto',
+        background:Colors.base,
         fontFamily:Fonts.primary,
-        color:Colors.blueSecondary,
+        color:Colors.light,
         width:drawerWidth - 30,
       },
       companyLogo:{

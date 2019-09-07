@@ -11,54 +11,15 @@ export const REGEX ={
 
 export const API = {
 
-    URL:'http://69.64.68.237:8080/samstertiary/api/',
+    URL:'http://127.0.0.1:4242/',
 
     PATHS:{
-        DIAL_CODE:'dialcodes',
-        AUTHENTICATION:'auth/actions',
-        SIGNUP:'signup/actions',
-        PROFILE:'profile/page/',
-        ALLPROFILE:'profile/fetch',
-        PROFILEBYPHONE:'profile/validate',
-        MAINPROFILE:'profile',
-        LOGIN:"auth/login", 
-        INSTITUTE:'institution',
-        FACULTY:'faculty',
-        ALLFACULTY:'faculty/fetch',
-        ALLINSTITUTIONS:'institution/fetch',
-        COUNTRYLOCATIONS:'get/countrylocations?country=1',
-        COUNTRIES:'get/countries',
-        DEPARTMENT:'department/',
-        COURSES:'course',
-        PAYMENT:{
-          MAIN:'payment',
-          FEE:'fees',
-          HISTORY:'history',
-          REFERENCE:'reference?totalslots='
-        },
-        SUBSCRIPTION:{
-          MAIN:'subscription',
-          SUBSCRIBE:'subscribe',
-          CONFIRM:'confirm',
-        },
-        ALLSTUDENT:'student/fetch',
-        STUDENT:'student',
-        SEMESTER:'semester',
-        ALLSEMESTER:'semester/fetch',
-        SESSION:'session',
-        COURSEREG:'coursereg/',
-        ALLCOURSEREG:'coursereg/fetch',
-        ALLSESSION:'session/fetch',
-        ALLCOURSES:'course/fetch',
-        ALLDEPARTMENTS:'department/fetch',
-        ATTENDANCE:'attendance/fetch',
-        UPLOAD:'upload',
-        DROPDOWNS:{
-          institution:'get/institutions?',
-          faculties:'get/faculties',
-          departments:'get/departments?',
-          courses:'get/courses?',
-        }
+          STAFF:'staff',
+          ADD_STAFF:'staff/add',
+          DELETE_STAFF:'staff/remove/',
+          INTERN_LIST:'intern/fetch',
+          INTERN_DELETE:'intern/remove/', 
+          INTERN_ADD:'intern/add',       
     },
     status: {
         /* *** SERVER STATUS CODES *** */

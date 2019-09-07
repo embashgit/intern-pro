@@ -48,7 +48,11 @@ export const validateInputs = (inPutobj, key)=>{
   }
   return valArray.some(checkList)
    
+
 }
+
+
+
 
 export const passwordChecker =(password)=>{
   let checkerText ='';
