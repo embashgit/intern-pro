@@ -13,6 +13,7 @@ import Grid from '@material-ui/core/Grid';
 import '../Styles.css'
 import { WorkOutlineOutlined } from '@material-ui/icons';
 import { Colors } from '../../styles/themes';
+import { API } from '../../Constants/costants';
 
 
 class Tasks extends Component {
@@ -21,6 +22,7 @@ state={
   rowsPerPage:5,
   isLoading:true,
   tasks: [],
+  taskList:[],
 }
 
 //Updates Tasks
@@ -33,10 +35,22 @@ handleChange = (event) => {
   this.setState({tasks: tasks})
 }
 
+
+getAllTask = () => {
+  return fetch(API.URL + API.PATHS.TASKLIST, {
+      method: 'GET',
+      headers: {
+          'Content-Type': 'application/json',
+      }
+  }).then(response => {
+      return response.json()
+  }).then(({ data }) => { this.setState({taskList:data})})
+}
 handleCloseServerError=()=>{
   return this.props.fetchRefresh();
 }
 componentDidMount(){
+  this.getAllTask()
     setTimeout(()=>{
 this.setState({isLoading:false})
     },1000)

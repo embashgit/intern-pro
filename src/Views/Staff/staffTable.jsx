@@ -11,6 +11,7 @@ import { styleProps } from '../../container/routes';
 import { API } from '../../Constants/costants';
 import moment from 'moment';
 import Snackbars from '../../components/Snackbars';
+import RoleChange from './RoleChange';
 
 class InternList extends Component {
 
@@ -28,6 +29,25 @@ handleCloseServerError = () => {
   }
 
 
+  handleRoleChange=(payload)=>{
+    
+    return fetch(`${API.URL + API.PATHS.CHANGEROLE}`, {
+        method: 'PUT',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body:JSON.stringify(payload)
+      }).then(res=>res.json())
+      .then(res => {
+          console.log(res)
+        this.setState({showSnack:true,message:"role Changed successfuly",success:true})
+        return this.getAllStaff();
+      }).catch(err=>{
+          console.log(err)
+        return this.setState({showSnack:true,message:"error ",success:false})
+      })
+    }
+  
 getAllStaff=()=>{
 
     return fetch(API.URL+API.PATHS.STAFF,{
@@ -87,6 +107,7 @@ getMuiTheme = () => createMuiTheme({
             role:row.roleid===1?'Admin':row.roleid===2? 'Supervisor':row.roleid === 3?'Intern':'Others',
             action: <CallOut 
             BottomAction={<Deactivate handleDeactivate={()=>this.handleDeactivate(row.id)} staff={row} />}
+            TopAction={<RoleChange handleRoleChange={(payload)=>this.handleRoleChange(payload)} staff={row} />}
             // TopAction ={'Edit'}
             // TopAction={<UpdateSemester Icon={<Edit style={{marginLeft:8}}/>}
             // triggerText="Edit" 

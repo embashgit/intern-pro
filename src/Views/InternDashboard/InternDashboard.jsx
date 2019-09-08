@@ -7,7 +7,6 @@ import ListItemText from '@material-ui/core/ListItemText';
 import Calendar from 'react-calendar';
 import '.././Styles.css'
 import {connect} from 'react-redux';
-import Axios from 'axios';
 import { API } from '../../Constants/costants';
 
 

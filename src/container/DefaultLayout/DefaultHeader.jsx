@@ -11,6 +11,7 @@ import Media from "react-media";
 import { userLogout } from '../../helpers/authentication.helper';
 import { connect } from 'react-redux'
 import { Fonts, Colors } from '../../styles/themes';
+import { ExitToAppOutlined } from '@material-ui/icons';
 // import { logout } from '../../actions/authentication.action';
 // import logo from '../../assets/img/nlogo.svg'
 const AvatarImg = require('../../images/avatar.png');
@@ -77,11 +78,11 @@ class DefaultHeader extends React.Component {
                     onClose={this.handleClose}
                     style={{marginTop:35}} classes={{paper:classes.menu}} 
                     >
-                    <MenuItem onClick={this.handleClose}><Icon color="primary" style={{marginRight:10}} >account_circle_outlined</Icon>Profile</MenuItem>
+                    {/* <MenuItem onClick={this.handleClose}><Icon color="primary" style={{marginRight:10}} >account_circle_outlined</Icon>Profile</MenuItem> */}
                     {/* <MenuItem onClick={this.handleClose}><Icon style={{color:"#388e3c", marginRight:10}} >people</Icon>Accounts
                     </MenuItem> */}
                     <Divider  />
-                    <MenuItem onClick={this.props.userLogout}><Icon style={{color:"#b71c1c", marginRight:10}} >exit_to_app</Icon>Logout</MenuItem>
+                    <MenuItem onClick={this.props.userLogout}><ExitToAppOutlined/> Logout</MenuItem>
                     </Menu>
 
             </Toolbar>

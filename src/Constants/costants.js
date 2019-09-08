@@ -19,7 +19,12 @@ export const API = {
           DELETE_STAFF:'staff/remove/',
           INTERN_LIST:'intern/fetch',
           INTERN_DELETE:'intern/remove/', 
-          INTERN_ADD:'intern/add',       
+          INTERN_ADD:'intern/add',    
+          CHANGEROLE:'staff/changerole',
+          PROFILES:'auth/profiles',
+          PROFILE_ADD:'auth/signup',
+          TASK_ADD:'task/add',
+          TASKLIST:'task/fetch'
     },
     status: {
         /* *** SERVER STATUS CODES *** */
