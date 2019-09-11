@@ -606,7 +606,8 @@ class Dashboard extends Component {
 
 const mapStateToProps = (state) => {
     return {
-        taskList: state.interns.taskList
+        taskList: state.interns.taskList,
+        userData: state.AuthState.data.user,
     }
 }
 const mapDispatchToProps = (dispatch) => {

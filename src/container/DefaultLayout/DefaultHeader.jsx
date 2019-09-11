@@ -42,7 +42,7 @@ class DefaultHeader extends React.Component {
       const {classes,isLoading,userData, sidebarFixed} = this.props
       const { isMobile } = this.state
       const { anchorEl } = this.state;
-      const {profile} =userData;
+      const {user} =userData;
         return (
             <AppBar
             position="fixed"
@@ -60,7 +60,7 @@ class DefaultHeader extends React.Component {
                 </div>
                 <div className={classes.grow} />
                 <Typography variant="button" color="inherit" style={{float:"right",fontFamily:Fonts.primary, textTransform:"none"}} noWrap>
-                {isMobile ? 'BM' :isLoading? '': profile?profile.name:''}
+                {isMobile ? 'BM' :isLoading? '': user?user.surname:''}
                 </Typography>
                 <IconButton
                     aria-owns={anchorEl? 'material-appbar' : undefined}

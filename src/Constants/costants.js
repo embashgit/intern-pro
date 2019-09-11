@@ -24,7 +24,11 @@ export const API = {
           PROFILES:'auth/profiles',
           PROFILE_ADD:'auth/signup',
           TASK_ADD:'task/add',
-          TASKLIST:'task/fetch'
+          TASKLIST:'task/fetch',
+          TASK_DELETE:'task/delete/',
+          SIGNIN:'auth/signin',
+          OWNTASK:'intern/tasks',
+
     },
     status: {
         /* *** SERVER STATUS CODES *** */

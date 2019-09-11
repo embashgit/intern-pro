@@ -100,7 +100,7 @@ const account = [
     },
     access: [
       { "module": "Dashboard", "pages": [] },
-      { "module": "Staff", "pages": ["Interns","Supervisor","Task"] },
+      { "module": "Staff", "pages": ["Interns","Supervisor","Tasks"] },
       // { "module": "Supervisor", "pages": ["supervisor"] }
     ]
   },
@@ -114,7 +114,6 @@ const account = [
     access: [
       { "module": "Dashboard", "pages": ["InternDashboard"]},
       { "module": "Tasks", "pages": []},
-      // { "module": "Interns", "pages": ["Interns"] },
     ]
   },
 ]
@@ -132,18 +131,15 @@ const AuthState = (state = InitState, action) => {
         isLoggedIn: false,
       }
     case LOGIN:
-      const acc = account.filter((user) => user.email === action.payload.phone && user.pin === action.payload.pin
-      );
-      console.log(action.payload);
-      console.log(acc)
-      if (acc[0]) {
+      // const acc = account.filter((user) => user.email === action.payload.phone && user.pin === action.payload.pin
 
+      console.log(action.payload);
+      if (action.payload) {
         return {
           ...state,
           loginErrorMessage: '',
-          data: { ...state.data, ...acc[0] },
+          data: { ...state.data, ...action.payload },
           // token:{...state.token,...tokens},
-
           isLoggedIn: true,
           loginError: false,
           isLoading: false,

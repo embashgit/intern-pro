@@ -1,3 +1,4 @@
+/* eslint-disable no-unreachable */
 import {
   fetchLogin,
   fetchLoginrequest,
@@ -75,31 +76,26 @@ export const userLogin = (credentials) => {
    
     setTimeout(()=>{
       if (credentials) {
-        dispatch(fetchLogin(credentials));
-        const { isLoggedIn,data} = getState().AuthState;
-        if(isLoggedIn && data.profile.title==='Intern'){
-          return history.push('/internDashboard')
-        }
-        if(isLoggedIn){
-          return history.push('/')
-        } 
-        // sessionStorage.setItem('user');
-        // return timeout(30000, login(phone, pin)).then((data) => {
-        //   dispatch(fetchLogin(data))
-        //   const { isLoggedIn} = getState().Auth;
-        //   const {role} =getState().Auth.data.profile;
-        //   dispatch(resolveRoles(role))
-        //   console.log(role)
-        //   if (isLoggedIn) {
-        //    history.push('/profile')
-        //   }
-        // }).catch(error => {
-        //   console.log(error)
-        //   if (error === ERROR_MESSAGE.TIMEOUT) return dispatch(dispatchAndRefresh(fetchLoginInvalid(ERROR_MESSAGE.TIMEOUT),fetchRefreshRequest()))
-        //   if (error.status === parseInt(status.NOT_ACCEPTABLE)) return dispatch(dispatchAndRefresh(fetchLoginInvalid(SIGN_IN_INVALID),fetchRefreshRequest()))
-        //   if (error.status === parseInt(status.INTERNAL_SERVER_ERROR))  return dispatch(dispatchAndRefresh(fetchLoginInvalid(NETWORK_FAILURE),fetchRefreshRequest()))
-        //    return dispatch(dispatchAndRefresh(fetchLoginInvalid(NETWORK_FAILURE),fetchRefreshRequest()))
-        // })
+        let password = credentials.pin;
+        let username = credentials.phone;
+        console.log(`${username}${password}`)
+          return  login(username, password)
+          .then((res)=>{
+            console.log(res)
+            if(res.meta.message ==='Success' && res.data){
+              dispatch(fetchLogin(res.data));
+              const { isLoggedIn,data} = getState().AuthState;
+              if(isLoggedIn && data.user.roleid===3){
+                return history.push('/internDashboard')
+              }
+              if(isLoggedIn){
+                return history.push('/')
+              }
+            }else{
+              dispatch(fetchLogin());
+            }
+          })
+       
       }
     },2000)
 

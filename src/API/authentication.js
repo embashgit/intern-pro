@@ -3,17 +3,20 @@ import {API} from '../Constants/costants'
 
 import { fetchAndHandleTokenRefresh } from './common';
 
-export const login = (phone, pin) => {
-    const method = 'POST';
-    const samsApi =API.PATHS.LOGIN;
-    const meta = {};
+export const login = (username, password) => {
+    const path =API.PATHS.SIGNIN;
     const headers={
       'Content-Type':'application/json',
     }
-    const data = { phone:phone, pin:pin };
-    const requestBody = JSON.stringify({ meta, data});
-   
-    return fetchAndHandleTokenRefresh(samsApi,method,requestBody,headers)
+    const data = { username:username, password:password };
+    const requestBody = JSON.stringify(data);
+   return fetch(API.URL + path,{
+    method:'POST',
+    body:requestBody,
+    headers:headers
+   })
+   .then(res=>res.json())
+   .then(resData =>{ return resData})
   };
 
 /**

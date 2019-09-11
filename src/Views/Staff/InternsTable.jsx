@@ -134,11 +134,7 @@ class InternList extends Component {
         action: <CallOut
           BottomAction={row.intern ? <Deactivate handleDeactivate={() => this.handleDeactivate(row.intern.id)} staff={row} /> :
             <InternModal staff={row} handleAdd={(payload) => this.addIntern(payload)} />}
-        // TopAction ={'Edit'}
-        // TopAction={<UpdateSemester Icon={<Edit style={{marginLeft:8}}/>}
-        // triggerText="Edit" 
-        // style={{width:150,color:Colors.blueSecondary,justifyContent:'space-around'}}
-        // semester={row} />}
+   
         />
       }
     }) : [];

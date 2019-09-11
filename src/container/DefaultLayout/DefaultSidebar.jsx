@@ -150,7 +150,7 @@ class DefaultSidebar extends React.Component {
               <div >
           
                 <Button variant="outlined" color="inherit" className={classes.companyButton}>
-                  <Typography variant="h5" id="buizName" className={classes.companyName}><span><BusinessOutlined style={{ position: "absolute", top: 5, left: 0,color:Colors.light }}  /></span>{isLoading ? nameLoader : userData.profile ? userData.profile['abbrv'] : ''}</Typography>
+                  <Typography variant="h5" id="buizName" className={classes.companyName}><span><BusinessOutlined style={{ position: "absolute", top: 5, left: 0,color:Colors.light }}  /></span>{userData.user ? userData.user.roleid===3?'Intern' :userData.user.roleid===2? 'Supervisor':'':''}</Typography>
                 </Button>
 
                 <Menu
@@ -187,8 +187,8 @@ class DefaultSidebar extends React.Component {
 <img height="150px" src={require('../../images/phoneProfile.png')} alt="profile-display"/>
 <div>
 
-  <Typography color="textSecondary" variant="subtitle2">Name: <span>{profileData.name}</span></Typography>
-  <Typography color="textSecondary" variant="subtitle2">Title: <span>{profileData.title}</span></Typography>
+  <Typography color="textSecondary" variant="subtitle2">Name: <span>{profileData && `${profileData.firstname} ${profileData.surname}`}</span></Typography>
+  <Typography color="textSecondary" variant="subtitle2">Title: <span>{profileData && profileData.jobtitle}</span></Typography>
   <div className={classes.pic}>
     <Button  className={classes.picButton} variant="outlined" > Change Image</Button>
   </div>
@@ -256,7 +256,7 @@ class DefaultSidebar extends React.Component {
 const mapStateToProps = (state) => {
   return {
     userData: state.AuthState.data,
-    profileData:state.AuthState.data.profile,
+    profileData:state.AuthState.data.user,
     isLoading: state.AuthState.isLoadingData,
     dataError: state.AuthState.dataError,
     dataErrorMessage: state.AuthState.dataErrorMessage,
